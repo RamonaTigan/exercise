@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = 'spring-university-app'
+group = 'org.fasttrackit'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '16'
 
@@ -13,8 +13,15 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter:2.5.4'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.4'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.4'
+	implementation 'org.springframework.data:spring-data-jpa:2.5.4'
+	implementation 'org.postgresql:postgresql:42.2.23'
+    implementation 'org.jetbrains:annotations:22.0.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.4'
+	testImplementation 'org.mockito:mockito-core:3.12.4'
+	testImplementation 'org.mockito:mockito-junit-jupiter:3.12.4'
 }
 
 test {
