@@ -1,19 +1,20 @@
-package org.fasttrackit.ro.fasttrackit.university.model;
+package org.fasttrackit.ro.fasttrackit.university.service.model;
+
 
 import java.util.Objects;
 
-public class Human {
-    Long id;
-    String cnp;
-    String lastname;
-    String firstname;
+public class HumanDto {
+    private Long humanId;
+    private String cnp;
+    private String lastname;
+    private String firstname;
 
     public Long getId() {
-        return id;
+        return humanId;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.humanId = id;
     }
 
     public String getCnp() {
@@ -41,25 +42,15 @@ public class Human {
     }
 
     @Override
-    public String toString() {
-        return "Human{" +
-                "id=" + id +
-                ", cnp='" + cnp + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", firstname='" + firstname + '\'' +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Human human = (Human) o;
-        return Objects.equals(id, human.id) && Objects.equals(cnp, human.cnp) && Objects.equals(lastname, human.lastname) && Objects.equals(firstname, human.firstname);
+        HumanDto humanDto = (HumanDto) o;
+        return Objects.equals(humanDto, humanDto.humanId) && Objects.equals(cnp, humanDto.cnp) && Objects.equals(lastname, humanDto.lastname) && Objects.equals(firstname, humanDto.firstname);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, cnp, lastname, firstname);
+        return Objects.hash(humanId, cnp, lastname, firstname);
     }
 }

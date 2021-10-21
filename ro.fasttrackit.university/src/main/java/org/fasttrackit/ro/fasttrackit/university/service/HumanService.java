@@ -1,11 +1,11 @@
 package org.fasttrackit.ro.fasttrackit.university.service;
 
-import org.fasttrackit.ro.fasttrackit.university.model.Human;
+
 import org.fasttrackit.ro.fasttrackit.university.repository.HumanRepository;
 import org.fasttrackit.ro.fasttrackit.university.repository.dao.HumanEntity;
+import org.fasttrackit.ro.fasttrackit.university.service.model.HumanDto;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -16,14 +16,15 @@ public class HumanService {
     private final HumanRepository humanRepository;
 
     public HumanService(HumanRepository humanRepository) {
+
         this.humanRepository = humanRepository;
     }
 
-    public List<Human> getAllHumans(){
+    public List<HumanDto> getAllHumans() {
         final List<HumanEntity> all = this.humanRepository.findAll();
         return all.stream()
                 .map(humanEntity -> {
-                    Human createdHuman = new Human();
+                    HumanDto createdHuman = new HumanDto();
                     createdHuman.setId(humanEntity.getId());
                     createdHuman.setCnp(humanEntity.getCnp());
                     createdHuman.setFirstname(humanEntity.getFirstname());
@@ -32,22 +33,23 @@ public class HumanService {
                 })
                 .collect(Collectors.toList());
     }
-    public List<Human> getById(Long id){
-        final Optional<HumanEntity> byId = this.humanRepository.findById(id);
-        return byId.stream()
-                .map(humanEntity -> {
-                    Human sortedHuman = new Human();
-                    sortedHuman.setId(humanEntity.getId());
-                    sortedHuman.setCnp(humanEntity.getCnp());
-                    sortedHuman.setFirstname(humanEntity.getFirstname());
-                    sortedHuman.setLastname(humanEntity.getLastname());
-                    return sortedHuman;
-                })
-                .collect(Collectors.toList());
 
+    public HumanDto getById(Long id) {
+        final Optional<HumanEntity> byId = this.humanRepository.findById(id);
+        if (byId.isEmpty()) {
+            return null;
+        }
+        HumanEntity humanEntity = byId.get();
+
+        HumanDto humanDto = new HumanDto();
+        humanDto.setId(humanEntity.getId());
+        humanDto.setCnp(humanEntity.getCnp());
+        humanDto.setFirstname(humanEntity.getFirstname());
+        humanDto.setLastname(humanEntity.getLastname());
+        return humanDto;
     }
 
-    public void createOrUpdateHuman(Human toCreate){
+    public void createOrUpdateHuman(HumanDto toCreate) {
         HumanEntity createOrUpdateMe = new HumanEntity();
         createOrUpdateMe.setId(toCreate.getId());
         createOrUpdateMe.setCnp(toCreate.getCnp());
@@ -57,8 +59,8 @@ public class HumanService {
 
     }
 
-   public void deleteById(Long id){
-      this.humanRepository.deleteById(id);
+    public void deleteHumanById(Long id) {
+        this.humanRepository.deleteById(id);
 
     }
 }

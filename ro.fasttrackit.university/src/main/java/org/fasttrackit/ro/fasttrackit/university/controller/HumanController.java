@@ -1,7 +1,7 @@
 package org.fasttrackit.ro.fasttrackit.university.controller;
 
-import org.fasttrackit.ro.fasttrackit.university.model.Human;
 import org.fasttrackit.ro.fasttrackit.university.service.HumanService;
+import org.fasttrackit.ro.fasttrackit.university.service.model.HumanDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,27 +21,26 @@ public class HumanController {
         return ResponseEntity.ok("There are no humans");
     }
 
-    @GetMapping("/api/getAll")
-    public ResponseEntity<List<Human>> getAllHumans() {
+    @GetMapping("/api/human")
+    public ResponseEntity<List<HumanDto>> getAllHumans() {
         return ResponseEntity.ok(humanService.getAllHumans());
     }
 
-    @GetMapping("/id/{id}")
-    public ResponseEntity<String> getHumanById(@PathVariable("id") Long humanId,
-                                               @RequestParam() String searchingFor){
-        return ResponseEntity.ok(humanService.getById(humanId) + searchingFor);
+    @GetMapping("/api/human/{id}")
+    public ResponseEntity<HumanDto> getById(@PathVariable("id") Long humanId){
+        return ResponseEntity.ok(humanService.getById(humanId));
     }
 
-    @PostMapping("/api/create")
-    public ResponseEntity createOrUpdateHuman(@RequestBody Human humanRequest) {
+    @PostMapping("/api/human")
+    public ResponseEntity createOrUpdateHuman(@RequestBody HumanDto humanRequest) {
         this.humanService.createOrUpdateHuman(humanRequest);
         return ResponseEntity.ok().build();
     }
 
 
-    @DeleteMapping("/api/delete/{id}")
-    public void deleteById(@PathVariable("id") Long humanId){
-        this.humanService.deleteById(humanId);
+    @DeleteMapping("/api/human/{id}")
+    public void deleteHumanById(@PathVariable("id") Long humanId){
+        this.humanService.deleteHumanById(humanId);
 
     }
 }

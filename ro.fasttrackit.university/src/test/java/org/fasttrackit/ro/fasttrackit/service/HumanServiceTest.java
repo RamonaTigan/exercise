@@ -1,8 +1,8 @@
 package org.fasttrackit.ro.fasttrackit.service;
 
-import org.fasttrackit.ro.fasttrackit.university.model.Human;
 import org.fasttrackit.ro.fasttrackit.university.repository.HumanRepository;
 import org.fasttrackit.ro.fasttrackit.university.service.HumanService;
+import org.fasttrackit.ro.fasttrackit.university.service.model.HumanDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -21,7 +21,7 @@ public class HumanServiceTest {
 
     @Test
     public void firstTest(){
-        List<Human> expectedHumans = service.getAllHumans();
+        List<HumanDto> expectedHumans = service.getAllHumans();
 
         Assertions.assertTrue(expectedHumans.isEmpty());
     }
