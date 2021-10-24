@@ -32,18 +32,18 @@ public class ProfessorService {
                 .collect(Collectors.toList());
     }
 
-    public List<ProfessorDto> getProfessorById(Long id) {
+    public ProfessorDto getProfessorById(Long id) {
         final Optional<ProfessorEntity> professorById = this.professorRepository.findById(id);
-        return professorById.stream()
-                .map(humanEntity -> {
-                    ProfessorDto sortedProfessor = new ProfessorDto();
-                    sortedProfessor.setId(humanEntity.getId());
-                    sortedProfessor.setCnp(humanEntity.getCnp());
-                    sortedProfessor.setFirstname(humanEntity.getFirstname());
-                    sortedProfessor.setLastname(humanEntity.getLastname());
-                    return sortedProfessor;
-                })
-                .collect(Collectors.toList());
+        if (professorById.isEmpty()) {
+            return null;
+        } final ProfessorEntity professorEntity = professorById.get();
+                    ProfessorDto professorDto = new ProfessorDto();
+                    professorDto.setId(professorEntity.getId());
+                    professorDto.setCnp(professorEntity.getCnp());
+                    professorDto.setFirstname(professorEntity.getFirstname());
+                    professorDto.setLastname(professorEntity.getLastname());
+                    return professorDto;
+
 
     }
 

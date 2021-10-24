@@ -14,7 +14,8 @@ public class SemesterService {
     private final SemesterRepository semesterRepository;
 
     public SemesterService(SemesterRepository semesterRepository) {
-        this.semesterRepository = semesterRepository;}
+        this.semesterRepository = semesterRepository;
+    }
 
     public List<SemesterDto> getAllSemesters() {
         final List<SemesterEntity> allSemesters = this.semesterRepository.findAll();
@@ -32,22 +33,22 @@ public class SemesterService {
                 .collect(Collectors.toList());
     }
 
-    public List<SemesterDto> getSemesterById(Long id) {
+    public SemesterDto getSemesterById(Long id) {
         final Optional<SemesterEntity> semesterById = this.semesterRepository.findById(id);
-        return semesterById.stream()
-                .map(semesterEntity -> {
-                    SemesterDto sortedSemester = new SemesterDto();
-                    sortedSemester.setId(semesterEntity.getId());
-                    sortedSemester.setUniversity_dept(semesterEntity.getUniversity_dept());
-                    sortedSemester.setUniversity_year(semesterEntity.getUniversity_year());
-                    sortedSemester.setSemester_no(semesterEntity.getSemester_no());
-                    sortedSemester.setStart_date(semesterEntity.getStart_date());
-                    sortedSemester.setEnd_date(semesterEntity.getEnd_date());
-                    return sortedSemester;
-                })
-                .collect(Collectors.toList());
+        if (semesterById.isEmpty()) {
+            return null;
+        }
+        final SemesterEntity semesterEntity = semesterById.get();
+        SemesterDto semesterDto = new SemesterDto();
+        semesterDto.setId(semesterEntity.getId());
+        semesterDto.setUniversity_dept(semesterEntity.getUniversity_dept());
+        semesterDto.setUniversity_year(semesterEntity.getUniversity_year());
+        semesterDto.setSemester_no(semesterEntity.getSemester_no());
+        semesterDto.setStart_date(semesterEntity.getStart_date());
+        semesterDto.setEnd_date(semesterEntity.getEnd_date());
+        return semesterDto;
 
-    }
+}
 
     public void createOrUpdateSemester(SemesterDto toCreate) {
         SemesterEntity createOrUpdateMe = new SemesterEntity();

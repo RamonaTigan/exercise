@@ -21,9 +21,8 @@ public class StudentController {
     }
 
     @GetMapping("/api/students/{id}")
-    public ResponseEntity<String> getStudentById(@PathVariable("id") Long studentId,
-                                               @RequestParam() String searchingFor){
-        return ResponseEntity.ok(studentService.getStudentById(studentId) + searchingFor);
+    public ResponseEntity<StudentDto> getStudentById(@PathVariable("id") Long studentId){
+        return ResponseEntity.ok(studentService.getStudentById(studentId));
     }
 
     @PostMapping("/api/students")

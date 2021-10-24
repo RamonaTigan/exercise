@@ -1,7 +1,6 @@
 package org.fasttrackit.ro.fasttrackit.university.service;
 
 import org.fasttrackit.ro.fasttrackit.university.repository.StudentRepository;
-import org.fasttrackit.ro.fasttrackit.university.repository.dao.HumanEntity;
 import org.fasttrackit.ro.fasttrackit.university.repository.dao.StudentEntity;
 import org.fasttrackit.ro.fasttrackit.university.service.model.StudentDto;
 import org.springframework.stereotype.Service;
@@ -31,19 +30,17 @@ public class StudentService {
                 .collect(Collectors.toList());
     }
 
-    public List<StudentDto> getStudentById(Long id) {
+    public StudentDto getStudentById(Long id) {
         final Optional<StudentEntity> studentById = this.studentRepository.findById(id);
-        return studentById.stream()
-                .map(humanEntity -> {
+        if (studentById.isEmpty()){
+            return null;}
+        final StudentEntity studentEntity = studentById.get();
                     StudentDto sortedStudent = new StudentDto();
-                    sortedStudent.setId(humanEntity.getId());
-                    sortedStudent.setCnp(humanEntity.getCnp());
-                    sortedStudent.setFirstname(humanEntity.getFirstname());
-                    sortedStudent.setLastname(humanEntity.getLastname());
+                    sortedStudent.setId(studentEntity.getId());
+                    sortedStudent.setCnp(studentEntity.getCnp());
+                    sortedStudent.setFirstname(studentEntity.getFirstname());
+                    sortedStudent.setLastname(studentEntity.getLastname());
                     return sortedStudent;
-                })
-                .collect(Collectors.toList());
-
     }
 
     public void createOrUpdateStudent(StudentDto toCreate) {

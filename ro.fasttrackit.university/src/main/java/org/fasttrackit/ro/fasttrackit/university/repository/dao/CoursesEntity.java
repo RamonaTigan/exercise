@@ -15,6 +15,8 @@ public class CoursesEntity {
     private String name;
     @ManyToMany(mappedBy = "studentCourses")
     Set<StudentEntity> students;
+    @ManyToMany(mappedBy = "courses")
+    Set<ScheduledCourses> scheduledCourses;
 
 
     public Long getId() {

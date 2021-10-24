@@ -21,9 +21,8 @@ public class SemesterController {
     }
 
     @GetMapping("/api/semester/{id}")
-    public ResponseEntity<String> getSemesterById(@PathVariable("id") Long semesterId,
-                                                   @RequestParam() String searchingFor){
-        return ResponseEntity.ok(semesterService.getSemesterById(semesterId) + searchingFor);
+    public ResponseEntity<SemesterDto> getSemesterById(@PathVariable("id") Long semesterId){
+        return ResponseEntity.ok(semesterService.getSemesterById(semesterId));
     }
 
     @PostMapping("/api/semester")

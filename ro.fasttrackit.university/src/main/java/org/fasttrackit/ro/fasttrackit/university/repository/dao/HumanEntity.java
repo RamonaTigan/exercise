@@ -13,6 +13,8 @@ public class HumanEntity {
     private String lastname;
     @Column
     private String firstname;
+    @OneToOne(mappedBy = "human")
+    private ProfessorEntity professor;
 
     public Long getId() {
         return id;

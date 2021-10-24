@@ -76,4 +76,16 @@ public class SemesterDto {
     public int hashCode() {
         return Objects.hash(semesterId, university_dept, university_year, semester_no, start_date, end_date);
     }
+
+    @Override
+    public String toString() {
+        return "SemesterDto{" +
+                "semesterId=" + semesterId +
+                ", universityDept='" + university_dept + '\'' +
+                ", universityYear='" + university_year + '\'' +
+                ", semesterNo=" + semester_no +
+                ", startDate=" + start_date +
+                ", endDate=" + end_date +
+                '}';
+    }
 }

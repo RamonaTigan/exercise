@@ -1,7 +1,6 @@
 package org.fasttrackit.ro.fasttrackit.university.controller;
 
 import org.fasttrackit.ro.fasttrackit.university.service.ProfessorService;
-import org.fasttrackit.ro.fasttrackit.university.service.model.HumanDto;
 import org.fasttrackit.ro.fasttrackit.university.service.model.ProfessorDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,9 +21,8 @@ public class ProfessorController {
     }
 
     @GetMapping("/api/professors/{id}")
-    public ResponseEntity<String> getProfessorById(@PathVariable("id") Long professorId,
-                                               @RequestParam() String searchingFor){
-        return ResponseEntity.ok(professorService.getProfessorById(professorId) + searchingFor);
+    public ResponseEntity<ProfessorDto> getProfessorById(@PathVariable("id") Long professorId){
+        return ResponseEntity.ok(professorService.getProfessorById(professorId));
     }
 
     @PostMapping("/api/professors")

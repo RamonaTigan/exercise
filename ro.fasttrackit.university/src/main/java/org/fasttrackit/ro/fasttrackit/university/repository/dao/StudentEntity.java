@@ -9,8 +9,8 @@ public class StudentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
+    @OneToOne(cascade = CascadeType.ALL)
+            @JoinColumn(name = "human_id", referencedColumnName = "id")
     private HumanEntity human = new HumanEntity();
     @ManyToMany
     @JoinTable(

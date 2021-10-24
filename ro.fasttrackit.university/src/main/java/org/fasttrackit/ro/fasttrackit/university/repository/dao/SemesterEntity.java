@@ -3,6 +3,7 @@ package org.fasttrackit.ro.fasttrackit.university.repository.dao;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity(name = "semester")
 public class SemesterEntity {
@@ -20,6 +21,8 @@ public class SemesterEntity {
     private Date start_date;
     @Column
     private Date end_date;
+    @ManyToMany(mappedBy = "semester")
+    Set<ScheduledCourses> courses;
 
     @Override
     public boolean equals(Object o) {
