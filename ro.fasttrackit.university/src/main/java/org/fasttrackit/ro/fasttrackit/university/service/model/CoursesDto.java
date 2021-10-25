@@ -4,16 +4,16 @@ package org.fasttrackit.ro.fasttrackit.university.service.model;
 import java.util.Objects;
 
 public class CoursesDto {
-    private Long id;
+    private Long courseId;
     private Long course_number;
     private String name;
 
     public Long getId() {
-        return id;
+        return courseId;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.courseId = id;
     }
 
     public Long getCourse_number() {
@@ -37,18 +37,18 @@ public class CoursesDto {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CoursesDto that = (CoursesDto) o;
-        return Objects.equals(id, that.id) && Objects.equals(course_number, that.course_number) && Objects.equals(name, that.name);
+        return Objects.equals(courseId, that.courseId) && Objects.equals(course_number, that.course_number) && Objects.equals(name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, course_number, name);
+        return Objects.hash(courseId, course_number, name);
     }
 
     @Override
     public String toString() {
         return "CoursesDto{" +
-                "id=" + id +
+                "id=" + courseId +
                 ", course_number=" + course_number +
                 ", name='" + name + '\'' +
                 '}';

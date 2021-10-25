@@ -1,0 +1,59 @@
+13:48:03.876 [main] INFO  org.fasttrackit.ro.fasttrackit.university.Application - Starting Application using Java 16.0.1 on RAMONA with PID 10516 (C:\work\repos\spring-university-app\ro.fasttrackit.university\build\classes\java\main started by HP in C:\work\repos\spring-university-app\ro.fasttrackit.university) <no request,no span> 
+13:48:03.881 [main] DEBUG org.fasttrackit.ro.fasttrackit.university.Application - Running with Spring Boot v2.5.4, Spring v5.3.9 <no request,no span> 
+13:48:03.881 [main] INFO  org.fasttrackit.ro.fasttrackit.university.Application - No active profile set, falling back to default profiles: default <no request,no span> 
+13:48:09.316 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning <no request,no span> 
+13:48:10.506 [main] INFO  org.fasttrackit.ro.fasttrackit.university.Application - Started Application in 7.034 seconds (JVM running for 7.565) <no request,no span> 
+14:03:56.119 [main] INFO  org.fasttrackit.ro.fasttrackit.university.Application - Starting Application using Java 16.0.1 on RAMONA with PID 18688 (C:\work\repos\spring-university-app\ro.fasttrackit.university\build\classes\java\main started by HP in C:\work\repos\spring-university-app\ro.fasttrackit.university) <no request,no span> 
+14:03:56.124 [main] DEBUG org.fasttrackit.ro.fasttrackit.university.Application - Running with Spring Boot v2.5.4, Spring v5.3.9 <no request,no span> 
+14:03:56.124 [main] INFO  org.fasttrackit.ro.fasttrackit.university.Application - No active profile set, falling back to default profiles: default <no request,no span> 
+14:04:02.242 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning <no request,no span> 
+14:04:03.547 [main] INFO  org.fasttrackit.ro.fasttrackit.university.Application - Started Application in 7.852 seconds (JVM running for 8.427) <no request,no span> 
+14:38:29.792 [main] INFO  org.fasttrackit.ro.fasttrackit.university.Application - Starting Application using Java 16.0.1 on RAMONA with PID 12004 (C:\work\repos\spring-university-app\ro.fasttrackit.university\build\classes\java\main started by HP in C:\work\repos\spring-university-app\ro.fasttrackit.university) <no request,no span> 
+14:38:29.799 [main] DEBUG org.fasttrackit.ro.fasttrackit.university.Application - Running with Spring Boot v2.5.4, Spring v5.3.9 <no request,no span> 
+14:38:29.800 [main] INFO  org.fasttrackit.ro.fasttrackit.university.Application - No active profile set, falling back to default profiles: default <no request,no span> 
+14:38:37.646 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning <no request,no span> 
+14:38:39.394 [main] INFO  org.fasttrackit.ro.fasttrackit.university.Application - Started Application in 10.074 seconds (JVM running for 10.713) <no request,no span> 
+16:56:30.313 [main] INFO  org.fasttrackit.ro.fasttrackit.university.Application - Starting Application using Java 16.0.1 on RAMONA with PID 18300 (C:\work\repos\spring-university-app\ro.fasttrackit.university\build\classes\java\main started by HP in C:\work\repos\spring-university-app\ro.fasttrackit.university) <no request,no span> 
+16:56:30.317 [main] DEBUG org.fasttrackit.ro.fasttrackit.university.Application - Running with Spring Boot v2.5.4, Spring v5.3.9 <no request,no span> 
+16:56:30.317 [main] INFO  org.fasttrackit.ro.fasttrackit.university.Application - No active profile set, falling back to default profiles: default <no request,no span> 
+16:56:34.564 [main] ERROR org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: Unknown mappedBy in: org.fasttrackit.ro.fasttrackit.university.repository.dao.SemesterEntity.courses, referenced property unknown: java.util.Set.semester <no request,no span> 
+16:56:34.564 [main] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Unknown mappedBy in: org.fasttrackit.ro.fasttrackit.university.repository.dao.SemesterEntity.courses, referenced property unknown: java.util.Set.semester <no request,no span> 
+16:56:34.626 [main] ERROR org.springframework.boot.SpringApplication - Application run failed <no request,no span> 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Unknown mappedBy in: org.fasttrackit.ro.fasttrackit.university.repository.dao.SemesterEntity.courses, referenced property unknown: java.util.Set.semester
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at org.fasttrackit.ro.fasttrackit.university.Application.main(Application.java:12)
+Caused by: org.hibernate.AnnotationException: Unknown mappedBy in: org.fasttrackit.ro.fasttrackit.university.repository.dao.SemesterEntity.courses, referenced property unknown: java.util.Set.semester
+	at org.hibernate.cfg.OneToOneSecondPass.doSecondPass(OneToOneSecondPass.java:164)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1693)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1661)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:295)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 16 common frames omitted
+16:57:46.602 [main] INFO  org.fasttrackit.ro.fasttrackit.university.Application - Starting Application using Java 16.0.1 on RAMONA with PID 2160 (C:\work\repos\spring-university-app\ro.fasttrackit.university\build\classes\java\main started by HP in C:\work\repos\spring-university-app\ro.fasttrackit.university) <no request,no span> 
+16:57:46.602 [main] DEBUG org.fasttrackit.ro.fasttrackit.university.Application - Running with Spring Boot v2.5.4, Spring v5.3.9 <no request,no span> 
+16:57:46.602 [main] INFO  org.fasttrackit.ro.fasttrackit.university.Application - No active profile set, falling back to default profiles: default <no request,no span> 
+16:57:52.047 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning <no request,no span> 
+16:57:53.172 [main] INFO  org.fasttrackit.ro.fasttrackit.university.Application - Started Application in 6.988 seconds (JVM running for 7.506) <no request,no span> 

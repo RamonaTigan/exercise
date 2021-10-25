@@ -21,7 +21,7 @@ public class SemesterEntity {
     private Date start_date;
     @Column
     private Date end_date;
-    @ManyToMany(mappedBy = "semester")
+    @OneToMany (mappedBy = "semester")
     Set<ScheduledCourses> courses;
 
     @Override

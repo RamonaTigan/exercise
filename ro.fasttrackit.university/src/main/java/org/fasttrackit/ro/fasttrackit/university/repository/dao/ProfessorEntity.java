@@ -11,7 +11,7 @@ public class ProfessorEntity {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "human_id", referencedColumnName = "id")
     private HumanEntity human = new HumanEntity();
-    @ManyToMany( mappedBy = "professor")
+    @OneToMany( mappedBy = "professor")
     Set<ScheduledCourses> scheduledCourses;
 
     public Long getId() {
